@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="pelicula">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="director" type="xs:string"/>  <!--string perque volem que s'introdueixi el nom-->
+      <xs:element name="repartiment">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="interpret" type="xs:string" maxOccurs="unbounded"/> <!--maxOccurs="unbounded" perque necessitam que es puguin introduir més d'un interpret-->
+        </xs:sequence>
+      </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="titol" type="xs:string"/>
+    <xs:attribute name="minuts" type="xs:integer"/> <!-- integer perque s'ha d'emplenar amb numeros-->
+  </xs:complexType>
+  </xs:element>
+</xs:schema>

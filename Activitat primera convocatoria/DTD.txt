@@ -1,0 +1,32 @@
+<!DOCTYPE factura [
+<!ELEMENT factura (DadesEmpresa, DadesClient, DadesFactura)>
+<!ATTLIST factura CodiFactura ID #REQUIRED>
+	<!ELEMENT DadesEmpresa (nom, direccio, poblacio, cif, telefon?)>
+		<!ELEMENT nom #PCDATA>
+		<!ELEMENT direccio #PCDATA>
+		<!ELEMENT poblacio #PCDATA>
+		<!ATTLIST poblacio CodiPostal #PCDATA>
+		<!ELEMENT cif #PCDATA>
+		<!ELEMENT telefon #PCDATA>
+	<!ELEMENT DadesClient (nom, DireccioEnviament, poblacio)>
+	<!ATTLIST DadesClient CodiClient ID #REQUIRED>
+		<!ELEMENT nom #PCDATA>
+		<!ELEMENT DireccioEnviament #PCDATA>
+		<!ELEMENT poblacio #PCDATA>
+		<!ATTLIST poblacio CodiPostal #PCDATA>
+	<!ELEMENT DadesFactura (data, linia*, base, iva, total)
+	<!ATTLIST DadesFactura CodiComanda ID required>
+	<!ATTLIST DadesFactura iva #PCDATA
+	<!ATTLIST DadesFactura pagament (efectiu|tarjeta|terminis)
+	<!ATTLIST DadesFactura moneda (euros) #REQUIRED>
+		<!ELEMENT data #PCDATA>
+		<!ELEMENT linia (ref, descripcio, quantitat, preu, import)>
+			<!ELEMENT ref #PCDATA>
+			<!ELEMENT descripcio #PCDATA>
+			<!ELEMENT quantitat #PCDATA>
+			<!ELEMENT preu #PCDATA>
+			<!ELEMENT import #PCDATA>
+		<!ELEMENT base #PCDATA>
+		<!ELEMENT iva #PCDATA required>
+		<!ELEMENT total #PCDATA>
+]>

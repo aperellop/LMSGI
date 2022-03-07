@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="empleat">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element name="nom" type="xs:string"/>
+                <xs:element name="direccio">            
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:element name="carrer" type="xs:string"/>
+                            <xs:element name="numero" type="xs:integer"/>
+                            <xs:element name="ciutat" type="xs:string"/>
+                            <xs:element name="provincia" type="xs:string"/>
+                        </xs:sequence>                
+                    </xs:complexType>
+                </xs:element> 
+                <xs:element name="telefono" type="xs:integer"/>
+            </xs:sequence>
+            <xs:attribute name="codi" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element> 
+</xs:schema>

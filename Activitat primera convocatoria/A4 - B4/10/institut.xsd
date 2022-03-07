@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="institut">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="alumne" minOccurs="1" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="dades" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nom" type="xs:string" minOccurs="1"/>
+                            <xs:element name="llinatges" type="xs:string" minOccurs="1"/>
+                            <xs:element name="dni" minOccurs="1">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="9"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>        
+                    </xs:complexType>    
+                    </xs:element>
+                    <xs:element name="comentaris" maxOccurs="1">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:minLength value="5"/>
+                                <xs:maxLength value="50"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+                <xs:attribute name="data_naixement" type="xs:string" use="required"/>
+            </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element> 
+</xs:schema>
